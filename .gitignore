@@ -1,6 +1,7 @@
-# Ignore macOS system files
 .DS_Store
-
-# Ignore Python bytecode
+.env
+private_notes.txt
 *.pyc
 __pycache__/
+myenv/
+
