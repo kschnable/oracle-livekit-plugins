@@ -1,3 +1,11 @@
+"""
+This module wraps Oracle's STT cloud service. While it is used by the Oracle LiveKit STT plug-in,
+it it completely indpendent of LiveKit and could be used in other environments besides LiveKit.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 from __future__ import annotations
 
 import logging
@@ -15,6 +23,10 @@ from oci.auth.signers.security_token_signer import SecurityTokenSigner
 
 
 class OracleSTT(RealtimeSpeechClientListener):
+    """
+    The Oracle STT class. This class wraps the Oracle STT service.
+    """
+
     def __init__(
             self,
             *,
@@ -197,6 +209,10 @@ class OracleSTT(RealtimeSpeechClientListener):
 
 
 class Parameters:
+    """
+    The parameters class. This class contains all parameter information for the Oracle STT class.
+    """
+
     secure: bool
     host: str
     port_number: int
@@ -218,5 +234,9 @@ class Parameters:
 
 @dataclass
 class SpeechResult:
+    """
+    The speech result class. This class contains all information related to one speech result.
+    """
+
     is_final: bool
     text: str

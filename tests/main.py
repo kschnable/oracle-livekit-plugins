@@ -1,3 +1,10 @@
+"""
+This module starts up a LiveKit environment to test the LiveKit STT, LLM, and TTS plug-ins.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 import sys
 import os
 

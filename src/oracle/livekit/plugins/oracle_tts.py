@@ -1,3 +1,11 @@
+"""
+This module wraps Oracle's TTS cloud service. While it is used by the Oracle LiveKit TTS plug-in,
+it it completely indpendent of LiveKit and could be used in other environments besides LiveKit.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 from __future__ import annotations
 
 import logging
@@ -17,6 +25,10 @@ from oci.ai_speech.models import TtsOracleConfiguration, TtsOracleTts2NaturalMod
 
 
 class OracleTTS():
+    """
+    The Oracle TTS class. This class wraps the Oracle TTS service.
+    """
+
     def __init__(
             self,
             *,
@@ -98,6 +110,10 @@ def short_uuid() -> str:
 
 
 class Parameters:
+    """
+    The parameters class. This class contains all parameter information for the Oracle TTS class.
+    """
+
     secure: bool
     host: str
     port_number: int

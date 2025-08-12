@@ -1,3 +1,10 @@
+"""
+This module is the Oracle LiveKit STT plug-in.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 from __future__ import annotations
 
 import logging
@@ -14,6 +21,10 @@ from .oracle_stt import OracleSTT
 
 
 class STT(stt.STT):
+    """
+    The Oracle LiveKit STT plug-in class. This derives from livekit.agents.stt.STT.
+    """
+
     def __init__(
             self,
             *,
@@ -112,6 +123,10 @@ class STT(stt.STT):
 
 
 class DerivedSTTStream:
+    """
+    The STT stream class.
+    """
+
     def __init__(self, oracle_stt_livekit_plugin: STT):
         self._running = True
         self._queue = asyncio.Queue()

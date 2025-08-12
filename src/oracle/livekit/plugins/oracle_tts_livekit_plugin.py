@@ -1,3 +1,10 @@
+"""
+This module is the Oracle LiveKit TTS plug-in.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 from __future__ import annotations
 
 import logging
@@ -19,6 +26,10 @@ REQUIRED_LIVE_KIT_AUDIO_BITS = 16
 
 
 class TTS(tts.TTS):
+    """
+    The Oracle LiveKit TTS plug-in class. This derives from livekit.agents.tts.TTS.
+    """
+
     def __init__(
         self,
         *,
@@ -61,6 +72,10 @@ class TTS(tts.TTS):
 
 
 class DerivedTTSChunkedStream(tts.ChunkedStream):
+    """
+    The TTS chunked stream class. This derives from livekit.agents.tts.ChunkedStream.
+    """
+
     def __init__(self, *, tts: tts.TTS, text: str, conn_options: DEFAULT_API_CONNECT_OPTIONS) -> None:
         super().__init__(tts = tts, input_text = text, conn_options = conn_options)
 

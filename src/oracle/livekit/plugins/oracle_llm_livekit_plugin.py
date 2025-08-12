@@ -1,3 +1,10 @@
+"""
+This module is the Oracle LiveKit LLM plug-in.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 from __future__ import annotations
 
 from livekit.agents import llm, utils
@@ -12,6 +19,10 @@ from .oracle_llm import OracleLLM, OracleLLMContent, OracleTool, OracleValue, RO
 
 
 class LLM(llm.LLM):
+    """
+    The Oracle LiveKit LLM plug-in class. This derives from livekit.agents.llm.LLM.
+    """
+
     def __init__(
         self,
         *,
@@ -95,6 +106,10 @@ class LLM(llm.LLM):
 
 
 class DerivedLLMStream(llm.LLMStream):
+    """
+    The LLM stream class. This derives from livekit.agents.llm.LLMStream.
+    """
+
     def __init__(
         self,
         *,

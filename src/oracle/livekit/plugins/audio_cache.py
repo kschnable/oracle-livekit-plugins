@@ -1,3 +1,10 @@
+"""
+This module implements simple audio caching used by the Oracle LiveKit TTS plug-in.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 import os
 
 import json
@@ -9,6 +16,10 @@ INDEX_FILE_NAME = "index.json"
 
 
 class AudioCache:
+    """
+    The audio cache class.
+    """
+
     def __init__(self, *, audio_cache_file_path: str):
         self._audio_cache_file_path = audio_cache_file_path
 
@@ -34,6 +45,20 @@ class AudioCache:
         audio_channels: int,
         audio_bits: int
         ):
+        """
+        Get the audio bytes for the specified text, voice, audio rate, audio channels, and audio bits.
+
+        Parameters:
+        text (str): The text.
+        voice (str): The voice.
+        audio_rate (int): The audio rate (16000 for example).
+        audio_channels (int): The audio channels (1 for example).
+        audio_bits (int): The audio bits (16 for example).
+
+        Returns:
+        bytes: The audio bytes.
+        """
+
         key = AudioCache.form_key(
             text = text,
             voice = voice,
@@ -75,6 +100,21 @@ class AudioCache:
         audio_bits: int,
         audio_bytes: bytes
         ):
+        """
+        Set the audio bytes for the specified text, voice, audio rate, audio channels, audio bits, and audio bytes.
+
+        Parameters:
+        text (str): The text.
+        voice (str): The voice.
+        audio_rate (int): The audio rate (16000 for example).
+        audio_channels (int): The audio channels (1 for example).
+        audio_bits (int): The audio bits (16 for example).
+        audio_bytes (bytes) : The audio bytes.
+
+        Returns:
+        (nothing)
+        """
+
         key = AudioCache.form_key(
             text = text,
             voice = voice,
@@ -113,5 +153,19 @@ class AudioCache:
         audio_channels: int,
         audio_bits: int
         ):
+        """
+        Form the key for the specified text, voice, audio rate, audio channels, and audio bits.
+
+        Parameters:
+        text (str): The text.
+        voice (str): The voice.
+        audio_rate (int): The audio rate (16000 for example).
+        audio_channels (int): The audio channels (1 for example).
+        audio_bits (int): The audio bits (16 for example).
+
+        Returns:
+        (nothing)
+        """
+
         key = voice + "\t" + str(audio_rate) + "\t" + str(audio_channels) + "\t" + str(audio_bits) + "\t" + text
         return key

@@ -1,3 +1,11 @@
+"""
+This module wraps Oracle's LLM cloud service. While it is used by the Oracle LiveKit LLM plug-in,
+it it completely indpendent of LiveKit and could be used in other environments besides LiveKit.
+
+Author: Keith Schnable (at Oracle Corporation)
+Date: 2025-08-12
+"""
+
 from __future__ import annotations
 
 import logging
@@ -33,6 +41,10 @@ TOOL_CALL_DESCRIPTION = "tool-call"
 
 
 class OracleLLM():
+    """
+    The Oracle LLM class. This class wraps the Oracle LLM service.
+    """
+
     def __init__(
             self,
             *,
@@ -395,6 +407,10 @@ class OracleLLM():
 
 
 class Parameters:
+    """
+    The parameters class. This class contains all parameter information for the Oracle LLM class.
+    """
+
     secure: bool
     host: str
     port_number: int
@@ -420,6 +436,10 @@ class Parameters:
 
 @dataclass
 class OracleLLMContent:
+    """
+    The Oracle LLM content class. This class contains all information related to one LLM content item.
+    """
+
     content_data: Any
     content_type: str
     role: str
@@ -427,6 +447,10 @@ class OracleLLMContent:
 
 @dataclass
 class OracleValue:
+    """
+    The Oracle value class. This class contains all information related to one value.
+    """
+
     name: str
     description: str
     type: str
@@ -434,6 +458,10 @@ class OracleValue:
 
 @dataclass
 class OracleTool:
+    """
+    The Oracle tool class. This class contains all information related to one tool.
+    """
+
     name: str
     description: str
     function: Callable[..., Any]
