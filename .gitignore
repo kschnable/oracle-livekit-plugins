@@ -4,4 +4,6 @@ private_notes.txt
 *.pyc
 __pycache__/
 myenv/
+~$*
+
 
