@@ -13,6 +13,8 @@ pip install torch
 pip install python-dotenv
 pip install fastmcp
 
+pip install pdoc
+
 pip install "livekit-agents[deepgram,openai,cartesia,silero,turn-detector]==1.0.22"
 pip install "livekit-plugins-noise-cancellation==0.2.5"
 
